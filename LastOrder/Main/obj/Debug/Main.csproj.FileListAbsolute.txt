@@ -10,3 +10,6 @@ C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.csproj.CoreCompileInp
 C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.csproj.Up2Date
 C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.exe
 C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.pdb
+C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.Form2.resources
+C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.Form3.resources
+C:\Users\김예인\LastOrder\LastOrder\Main\obj\Debug\Main.Form4.resources

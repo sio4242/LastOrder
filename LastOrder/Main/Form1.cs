@@ -123,6 +123,12 @@ namespace Main
 
             int qty = (int)numQty.Value;
 
+            if (qty <= 0)
+            {
+                MessageBox.Show("수량은 1개 이상이어야 합니다.");
+                return;
+            }
+
             if (qty > stock)
             {
                 MessageBox.Show("재고 부족!");
@@ -151,11 +157,71 @@ namespace Main
                 return;
             }
 
-            MessageBox.Show($"결제 완료!\n총 금액: {totalAmount}원");
+            string totalText = lblTotal.Text;
+
+            Form2 form2 = new Form2(this, listViewCart, lblTotal.Text);
+            form2.ShowDialog();
+
+        }
+        public void ResetPOS()
+        {
+            listViewCart.Items.Clear();
+
+            totalAmount = 0;
+            lblTotal.Text = "총 금액 : 0원";
+
+            LoadProducts(); 
+            numQty.Value = 1;
+        }
+
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 상품조회ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadProducts();
 
             listViewCart.Items.Clear();
-            totalAmount = 0;
-            lblTotal.Text = "총 금액: 0원";
+            lblTotal.Text = "총 금액 : 0원";
+            numQty.Value = 1;
+
+            MessageBox.Show("상품관리 화면으로 돌아왔습니다.");
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+            LoadProducts();
+        }
+
+        private void 매출조회ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void 이벤트ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+        public void RefreshProductList()
+        {
+            LoadProducts();
+        }
+
+
+        private void 입고출고ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 ev = new Form4();
+            ev.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form3 salesForm = new Form3();
+            salesForm.ShowDialog();
         }
     }
 }
